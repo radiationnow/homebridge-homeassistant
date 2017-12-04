@@ -107,10 +107,7 @@ HomeAssistantClimate.prototype = {
     } else {
       callback(null, serviceData.temperature);
     }
-    } else {
-      callback(communicationError);
-    }
-
+    
     this.log(`Setting temperature on the '${this.name}' to ${serviceData.temperature}`);
 
     this.client.callService(this.domain, 'set_temperature', serviceData, function (data) {
